@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "Internet Explainer AI",
+    "description": "Explains confusing internet posts using AI",
+    "version": "1.0",
+    "permissions": ["contextMenus", "scripting", "activeTab", "storage"],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "duck-icon.png",
+        "48": "duck-icon.png",
+        "128": "duck-icon.png"
+      }
+    },
+    "icons": {
+      "16": "duck-icon.png",
+      "48": "duck-icon.png",
+      "128": "duck-icon.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
